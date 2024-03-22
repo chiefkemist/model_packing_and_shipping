@@ -1,0 +1,42 @@
+[project]
+name = "model-packing-and-shipping"
+version = "0.1.0"
+description = "Add your description here"
+dependencies = [
+    "keras>=3.0.5",
+    "keras-cv>=0.8.2",
+    "keras-nlp>=0.8.2",
+    "jupyterlab>=4.1.5",
+    "jax[cpu]>=0.4.25",
+    "tensorflow>=2.16.1",
+    "pillow>=10.2.0",
+    "scikit-learn>=1.4.1.post1",
+    "flax>=0.8.2",
+]
+#readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.3.4",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/model_packing_and_shipping"]
+
+[tool.rye.scripts]
+jypyter-lab = { cmd = "jupyter lab --notebook-dir development/notebooks/" }
+train_jax_iris = { cmd = "python training/jax_iris_model/src/jax_iris_model/jax_iris.py" }
+jax_iris_api = { cmd = "granian --interface asgi apis/jax_iris/src/jax_iris/japp:app" }
+
+
+[tool.rye.workspace]
+members = [".", "development/ci/sdk", "training/jax_iris_model", "apis/jax_iris"]

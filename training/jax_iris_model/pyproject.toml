@@ -1,0 +1,26 @@
+[project]
+name = "jax-iris-model"
+version = "0.1.0"
+description = "Add your description here"
+dependencies = [
+    "scikit-learn>=1.4.1.post1",
+    "jax[cpu]>=0.4.25",
+    "flax>=0.8.2",
+    "tqdm>=4.66.2",
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jax_iris_model"]

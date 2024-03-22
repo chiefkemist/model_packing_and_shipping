@@ -1,0 +1,34 @@
+* Model Packing and Shipping
+
+A project to demonstrate steps to package and ship Machine Learning based Python  projects.
+
+** Setup
+
+Install [[https://rye-up.com/][Rye]] on your development machine and make sure to choose the [[https://astral.sh/blog/uv][uv]] option:
+
+#+begin_src bash
+
+curl -sSf https://rye-up.com/get | bash # install Rye with the uv option
+
+#+end_src
+
+Install Keras and Jupyterlab:
+
+#+begin_src bash
+
+rye add keras keras-cv keras-nlp jupyterlab # install dependencies
+
+
+
+#+end_src
+
+Start Jupyterlab:
+
+
+#+begin_src bash
+
+mkdir -p development/notebooks
+
+rye run jupyter lab --notebook-dir development/notebooks/ # start jupyterlab
+
+#+end_src
