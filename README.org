@@ -2,6 +2,29 @@
 
 A project to demonstrate steps to package and ship Machine Learning based Python  projects.
 
+** Model Lifecycle
+
+#+begin_src mermaid
+
+graph LR
+    A[Model Training] --> B[Model Saving]
+    B --> C[Model + API Packaging - Docker Container]
+    C --> D[Serve via API]
+
+#+end_src
+
+
+** Model file format convertions (Optional)
+
+#+begin_src mermaid
+
+graph LR
+    A(Tensorflow H5 Model) --> B(Convert to ONNX) --> C(ONNX Model)
+    D(Pytorch PT Model) --> E(Convert to ONNX) --> F(ONNX Model)
+    G(Python's Pickle Model) --> G(Python's Pickle Model)
+
+#+end_src
+
 ** Setup
 
 Install [[https://rye-up.com/][Rye]] on your development machine and make sure to choose the [[https://astral.sh/blog/uv][uv]] option:
@@ -32,3 +55,35 @@ mkdir -p development/notebooks
 rye run jupyter lab --notebook-dir development/notebooks/ # start jupyterlab
 
 #+end_src
+
+* References
+
+- [[https://www.kaggle.com/datasets/arshid/iris-flower-dataset][Iris dataset: ]]The Iris dataset is a foundational dataset in machine learning, featuring 150 records of iris flowers from three species. It includes four features: sepal length, sepal width, petal length, and petal width. Introduced by Ronald Fisher in 1936, it's commonly used for demonstrating classification algorithms.
+
+- [[https://keras.io/][Keras: ]]Keras is an open-source deep learning library written in Python. It's capable of running on top of TensorFlow, Microsoft Cognitive Toolkit, R, Theano, or PlaidML. Designed to enable fast experimentation with deep neural networks, it focuses on being user-friendly, modular, and extensible.
+
+- [[https://scikit-learn.org/stable/][scikit-learn: ]]Scikit-learn is a free machine learning library for Python. It features various classification, regression, and clustering algorithms, including support vector machines, random forests, gradient boosting, k-means, and DBSCAN. It's designed to work with NumPy, SciPy, and matplotlib.
+
+- [[https://onnx.ai/][ONNX: ]]Open Neural Network Exchange (ONNX) is an open-source format for representing deep learning models. It enables interoperability between different frameworks, such as PyTorch, TensorFlow, and scikit-learn. ONNX models can be exported to other frameworks and run on various hardware platforms.
+
+- [[https://www.h5py.org/][H5 File Format: ]]HDF5 is a file format for storing large numerical datasets. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and storage. It's commonly used in scientific computing, machine learning, and data analysis.
+
+- [[https://docs.python.org/3/library/pickle.html][Python Pickle: ]]Pickle is a Python module for serializing and deserializing Python objects. It can convert complex objects into byte streams, which can be stored or transmitted. Pickle is commonly used for saving and loading machine learning models, configuration settings, and other data.
+
+- [[https://tqdm.github.io/][tqdm: ]]Fast, extensible progress bar for loops and pipelines. It can be used to wrap any iterable, and it provides a simple, flexible API for customizing the progress bar's appearance and behavior.
+
+- [[https://jax.readthedocs.io/en/latest/][JAX:]] is Autograd and XLA, brought together for high-performance machine learning research. With its updated version of Autograd, JAX can automatically differentiate native Python and NumPy functions. It can differentiate through loops, branches, recursion, and closures, and it can take derivatives of derivatives of derivatives. It supports reverse-mode automatic differentiation (a.k.a. backpropagation) via grad as well as forward-mode automatic differentiation, and the two can be composed arbitrarily to any order.
+
+- [[https://learn.hashicorp.com/tutorials/terraform/cdktf-intro][Terraform CDK:]] is a software development framework for defining cloud infrastructure in code and provisioning it through Terraform. It allows you to define your infrastructure using familiar programming languages, such as TypeScript, Python, and Java, and then generate Terraform configuration files from that code. This enables you to leverage the power of Terraform while using the language features and tools of your choice.
+
+- [[https://aws.amazon.com/sagemaker/][Amazon SageMaker:]] Build, train, and deploy machine learning (ML) models for any use case with fully managed infrastructure, tools, and workflows
+
+- [[https://fastapi.tiangolo.com/][FastAPI: ]]Modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints. It's designed to be easy to use and learn, and it provides automatic interactive API documentation with Swagger UI and ReDoc.
+
+- [[https://rye-up.com/][Rye: ]]Rye is a comprehensive project and package management solution for Python. It provides a unified interface for managing dependencies, virtual environments, and project configurations. Rye is designed to be simple, fast, and flexible, and it supports a wide range of use cases, from simple scripts to complex applications.
+
+- [[https://dagger.io/][Dagger: ]]Dagger.io is a CI/CD platform that automates development and deployment workflows. It offers a code-driven framework for pipelines, enhancing build, test, and deployment efficiency. The platform focuses on simplicity, speed, and scalability.
+
+- [[https://aws.amazon.com/sagemaker/][Amazon SageMaker: ]]Build, train, and deploy machine learning (ML) models for any use case with fully managed infrastructure, tools, and workflows
+
+- [[https://cloud.google.com/?hl=en][Google Cloud: ]]Suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, file storage, and YouTube. It provides a series of modular cloud services, including computing, data storage, data analytics, and machine learning.

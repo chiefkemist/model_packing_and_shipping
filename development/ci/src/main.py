@@ -20,6 +20,29 @@ from dagger import dag, function, object_type
 @object_type
 class Mpas:
     @function
+    async def build_and_publish(
+            self, image_name: str,
+            project_dir: dagger.Directory
+    ) -> str:
+        """Builds and publishes a Docker image from a provided directory"""
+        return await (
+            dag.container()
+            .from_("ubuntu:22.04")
+            .with_exec(["apt", "update"])
+            .with_exec(["apt", "install", "-y", "curl"])
+            .with_exec(["apt", "install", "-y", "build-essential"])
+            .with_env_variable("RYE_INSTALL_OPTION", "--yes")
+            .with_exec(["curl", "-o", "install.sh", "-fsSL", "https://rye-up.com/get"])
+            .with_exec(["bash", "install.sh"])
+            #.with_exec(["bash", "-lc"])
+            #.with_exec(["bash", "$HOME/.rye/env"])
+            .with_mounted_directory("/tmp", project_dir)
+            .with_workdir("/tmp")
+            #.with_exec(["rye", "sync"])
+            .stdout()
+        )
+
+    @function
     def container_echo(self, string_arg: str) -> dagger.Container:
         """Returns a container that echoes whatever string argument is provided"""
         return dag.container().from_("alpine:latest").with_exec(["echo", string_arg])

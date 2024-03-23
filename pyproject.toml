@@ -43,4 +43,4 @@ jax_iris_api = { cmd = "granian --interface asgi apis/jax_iris/src/jax_iris/japp
 
 
 [tool.rye.workspace]
-members = [".", "development/ci/sdk", "training/jax_iris_model", "apis/jax_iris"]
+members = [".", "development/ci/sdk", "development/ci", "training/jax_iris_model", "apis/jax_iris"]

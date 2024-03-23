@@ -9,6 +9,7 @@
 
 -e file:.
 -e file:apis/jax_iris
+-e file:development/ci
 -e file:development/ci/sdk
 -e file:training/jax_iris_model
 absl-py==2.1.0
