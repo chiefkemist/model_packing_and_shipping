@@ -11,3 +11,6 @@ wheels/
 
 # project
 *.pkl
+*.h5
+*.onnx
+*.keras

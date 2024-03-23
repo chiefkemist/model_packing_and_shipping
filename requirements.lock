@@ -48,8 +48,17 @@ async-lru==2.0.4
     # via jupyterlab
 attrs==23.2.0
     # via cattrs
+    # via jsii
     # via jsonschema
     # via referencing
+aws-cdk-asset-awscli-v1==2.2.202
+    # via aws-cdk-lib
+aws-cdk-asset-kubectl-v20==2.1.2
+    # via aws-cdk-lib
+aws-cdk-asset-node-proxy-agent-v6==2.0.1
+    # via aws-cdk-lib
+aws-cdk-lib==2.133.0
+    # via model-packing-and-shipping
 babel==2.14.0
     # via jupyterlab-server
 backoff==2.2.1
@@ -62,6 +71,7 @@ bleach==6.1.0
     # via nbconvert
 cattrs==23.2.3
     # via dagger-io
+    # via jsii
 certifi==2024.2.2
     # via httpcore
     # via httpx
@@ -78,6 +88,9 @@ click==8.1.7
     # via uvicorn
 comm==0.2.2
     # via ipykernel
+constructs==10.3.0
+    # via aws-cdk-lib
+    # via model-packing-and-shipping
 debugpy==1.8.1
     # via ipykernel
 decorator==5.1.1
@@ -151,6 +164,7 @@ idna==3.6
     # via yarl
 importlib-resources==6.3.1
     # via etils
+    # via jsii
 ipykernel==6.29.3
     # via jupyterlab
 ipython==8.22.2
@@ -181,6 +195,12 @@ jinja2==3.1.3
     # via nbconvert
 joblib==1.3.2
     # via scikit-learn
+jsii==1.96.0
+    # via aws-cdk-asset-awscli-v1
+    # via aws-cdk-asset-kubectl-v20
+    # via aws-cdk-asset-node-proxy-agent-v6
+    # via aws-cdk-lib
+    # via constructs
 json5==0.9.24
     # via jupyterlab-server
 jsonpointer==2.4
@@ -347,6 +367,13 @@ psutil==5.9.8
 ptyprocess==0.7.0
     # via pexpect
     # via terminado
+publication==0.0.3
+    # via aws-cdk-asset-awscli-v1
+    # via aws-cdk-asset-kubectl-v20
+    # via aws-cdk-asset-node-proxy-agent-v6
+    # via aws-cdk-lib
+    # via constructs
+    # via jsii
 pure-eval==0.2.2
     # via stack-data
 pycparser==2.21
@@ -367,6 +394,7 @@ pygments==2.17.2
     # via rich
 python-dateutil==2.9.0.post0
     # via arrow
+    # via jsii
     # via jupyter-client
 python-dotenv==1.0.1
     # via pydantic-settings
@@ -495,6 +523,13 @@ traitlets==5.14.2
     # via nbclient
     # via nbconvert
     # via nbformat
+typeguard==2.13.3
+    # via aws-cdk-asset-awscli-v1
+    # via aws-cdk-asset-kubectl-v20
+    # via aws-cdk-asset-node-proxy-agent-v6
+    # via aws-cdk-lib
+    # via constructs
+    # via jsii
 typer==0.9.0
     # via granian
 types-python-dateutil==2.9.0.20240316
@@ -505,6 +540,7 @@ typing-extensions==4.10.0
     # via etils
     # via fastapi
     # via flax
+    # via jsii
     # via orbax-checkpoint
     # via pydantic
     # via pydantic-core

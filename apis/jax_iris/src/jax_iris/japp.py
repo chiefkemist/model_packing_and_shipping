@@ -4,7 +4,7 @@ from fastapi import FastAPI
 import jax.numpy as jnp
 import pickle
 from jax_iris_model.model import IrisNN
-from jax_iris_model.jax_iris import X_test
+from jax_iris_model.data import X_test
 
 app = FastAPI()
 
