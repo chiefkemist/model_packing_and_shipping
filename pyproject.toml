@@ -37,7 +37,8 @@ packages = ["src/model_packing_and_shipping"]
 
 [tool.rye.scripts]
 jypyter-lab = { cmd = "jupyter lab --notebook-dir development/notebooks/" }
-train_jax_iris = { cmd = "python training/jax_iris_model/src/jax_iris_model/jax_iris.py" }
+train_jax_iris = { cmd = "python training/jax_iris_model/src/jax_iris_model/train.py" }
+predict_jax_iris = { cmd = "python training/jax_iris_model/src/jax_iris_model/predict.py" }
 jax_iris_api = { cmd = "granian --interface asgi apis/jax_iris/src/jax_iris/japp:app" }
 
 
